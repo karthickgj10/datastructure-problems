@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.karthickgj</groupId>
+        <artifactId>datastructure-problems</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>two-pointers</artifactId>
+    <packaging>jar</packaging>
+    <name>two-pointers</name>
+    <description>Two pointers problems module</description>
+    <!-- module-specific properties (optional)
+    <properties>
+       <some.module.property>value</some.module.property>
+    </properties>
+    -->
+    <dependencies>
+        <!-- JUnit API for writing tests; version is managed by parent BOM -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- JUnit engine to run tests (runtime for surefire) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Add other module-specific dependencies here -->
+    </dependencies>
+    <!-- No build or pluginManagement needed here — child inherits versions/config from parent -->
+</project>
