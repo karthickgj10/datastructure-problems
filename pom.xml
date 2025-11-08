@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.karthickgj</groupId>
+    <artifactId>datastructure-problems</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>datastructure-problems</name>
+    <description>Practice project for data structure and algorithm problems in Java 21</description>
+
+    <!-- Modules (add more modules here) -->
+    <modules>
+        <module>two-pointers</module>
+    </modules>
+
+    <!-- Centralized properties -->
+    <properties>
+        <java.version>21</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- plugin versions (centralized) -->
+        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+        <maven.surefire.plugin.version>3.3.0</maven.surefire.plugin.version>
+        <maven.clean.plugin.version>3.4.0</maven.clean.plugin.version>
+        <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
+        <maven.jar.plugin.version>3.4.2</maven.jar.plugin.version>
+        <maven.install.plugin.version>3.1.2</maven.install.plugin.version>
+        <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
+        <maven.site.plugin.version>3.12.1</maven.site.plugin.version>
+        <maven.project.info.reports.plugin.version>3.6.1</maven.project.info.reports.plugin.version>
+
+        <!-- dependency BOM versions -->
+        <junit.bom.version>5.11.0</junit.bom.version>
+    </properties>
+
+    <!-- Repositories (explicit Central to avoid corporate mirrors if needed) -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Central</name>
+            <url>https://repo1.maven.org/maven2/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+    </repositories>
+
+    <!-- Dependency management for consistent versions across modules -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- JUnit BOM: modules can declare junit artifacts without versions -->
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Optional: common dependencies you want available in parent (not forced into modules) -->
+    <dependencies>
+        <!-- keep parent lightweight; prefer declaring dependencies in modules -->
+    </dependencies>
+
+    <!-- Centralized plugin management: versions + common configuration -->
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <!-- Compiler plugin: use java.version centrally -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <release>${java.version}</release>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+
+                <!-- Surefire: run tests (JUnit 5 supported by surefire 3.x) -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.plugin.version}</version>
+                    <configuration>
+                        <!-- When using JUnit Platform, surefire 3.x auto-detects it -->
+                        <useSystemClassLoader>true</useSystemClassLoader>
+                        <forkCount>1</forkCount>
+                        <reuseForks>true</reuseForks>
+                    </configuration>
+                </plugin>
+
+                <!-- Clean, resources, jar, install, deploy -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven.clean.plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven.jar.plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${maven.install.plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven.deploy.plugin.version}</version>
+                </plugin>
+
+                <!-- Site and reports -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven.site.plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${maven.project.info.reports.plugin.version}</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
+        <!-- You may add <plugins> here if you want the parent to execute something itself -->
+    </build>
+
+</project>
