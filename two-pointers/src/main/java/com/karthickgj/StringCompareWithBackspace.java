@@ -42,19 +42,6 @@ public class StringCompareWithBackspace {
         return index;
     }
 
-    /*public static int getIndex(String str, int index) {
-        int count = 0;
-        while(index >= 0 && str.charAt(index) == '#'){
-            index--;
-            count++;
-        }
-        while(count > 0 && index > 0) {
-            count--;
-            index--;
-        }
-        return index;
-    }*/
-
     public static void main(String[] args) {
         String str1 = "ab##";
         String str2 = "c#d#";
