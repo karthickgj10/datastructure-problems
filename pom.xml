@@ -17,6 +17,7 @@
     <!-- Modules (add more modules here) -->
     <modules>
         <module>two-pointers</module>
+        <module>fast-slow-pointers</module>
     </modules>
 
     <!-- Centralized properties -->
