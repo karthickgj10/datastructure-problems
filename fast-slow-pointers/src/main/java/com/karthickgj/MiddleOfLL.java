@@ -14,7 +14,7 @@ public class MiddleOfLL {
 
         ListNode slow = head;
         ListNode fast = head;
-        while(slow.next != null && fast.next != null) {
+        while(slow.next != null && (fast != null && fast.next != null)) {
             slow = slow.next;
             fast = fast.next.next;
         }
