@@ -18,6 +18,7 @@
     <modules>
         <module>two-pointers</module>
         <module>fast-slow-pointers</module>
+        <module>SlidingWindow</module>
     </modules>
 
     <!-- Centralized properties -->
