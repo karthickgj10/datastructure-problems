@@ -19,6 +19,7 @@
         <module>two-pointers</module>
         <module>fast-slow-pointers</module>
         <module>SlidingWindow</module>
+        <module>merge-intervals</module>
     </modules>
 
     <!-- Centralized properties -->
