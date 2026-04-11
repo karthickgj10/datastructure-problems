@@ -20,6 +20,8 @@
         <module>fast-slow-pointers</module>
         <module>SlidingWindow</module>
         <module>merge-intervals</module>
+        <module>test</module>
+        <module>dfs</module>
     </modules>
 
     <!-- Centralized properties -->
